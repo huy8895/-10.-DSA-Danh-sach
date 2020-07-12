@@ -11,6 +11,8 @@ public interface MyList<E> extends java.lang.Iterable<E>{
 
     public E get(int index);
 
+    public int indexOf(E e);
+
     public boolean isEmpty();
 
     public int lastIndexOf(E e);
