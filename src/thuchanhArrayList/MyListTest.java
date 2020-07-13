@@ -1,4 +1,4 @@
-package thuchanhtrienkhailoplist;
+package thuchanhArrayList;
 
 public class MyListTest {
     public static void main(String[] args) {

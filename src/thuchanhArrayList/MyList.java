@@ -1,10 +1,10 @@
-package thuchanhtrienkhailoplist;
+package thuchanhArrayList;
 
 import java.util.Arrays;
 
 public class MyList<E> {
    public int size = 0;
-   private static final int DEFAULT_CAPACITY = 10;
+   private static final int DEFAULT_CAPACITY = 2;
    private Object elements[];
 
    public MyList(){
