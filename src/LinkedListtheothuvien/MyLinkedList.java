@@ -1,10 +1,5 @@
 package LinkedListtheothuvien;
 
-import com.sun.xml.internal.ws.util.xml.CDATA;
-import org.w3c.dom.CDATASection;
-
-import java.util.LinkedList;
-
 public class MyLinkedList<E> {
     private int numNode;
     private Node head;
@@ -146,17 +141,17 @@ public class MyLinkedList<E> {
         return i;
     }
 
-    public E clone() {
-        MyLinkedList<E> clone = new MyLinkedList();
+    public MyLinkedList<Node> clone() {
+        MyLinkedList<Node> clone = new MyLinkedList<Node>(head.data);
+        Node temp = head;
 
-        clone.head = null;
-        clone.numNode = 0;
-
-        // Initialize clone with our elements
-        for (Node x = head; x != null; x = x.next)
-            clone.addLast(x.data);
-
-        return (E) clone;
+        int i = 0;
+        while (temp.next != null){
+            temp = temp.next;
+            clone.addLast(temp.data);
+            i++;
+        }
+        return clone;
     }
 /*
     public boolean contains(E element) {
