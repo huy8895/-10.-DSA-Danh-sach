@@ -32,11 +32,12 @@ public class MyLinkedList<E> {
 
         StringBuilder result = new StringBuilder("[" + head.data);
 
-        for (int i = 0; i < numNode; i++) {
+        int i = 0;
+        while (temp.next != null){
+            result.append(", ");
             temp = temp.next;
-            if (temp != null) result.append(", ");
             result.append(temp.data);
-
+            i++;
         }
 
         return result.toString() + "]";
@@ -116,10 +117,21 @@ public class MyLinkedList<E> {
 
     }
 
-    /*public boolean remove(Object object) {
-        return false;
-    }
+    public boolean removeObj(Object object) {
+        Node temp = head;
+        boolean isExit = false;
+        for (int i = 0; i < numNode;i++){
+            if (object.equals(temp.data)){
+                remove(i);
+                return true;
+            }
+            temp = temp.next;
 
+        }
+        return isExit;
+
+    }
+    /*
     public int size() {
         return 0;
     }

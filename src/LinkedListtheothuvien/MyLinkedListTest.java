@@ -16,6 +16,7 @@ public class MyLinkedListTest {
         System.out.println("myLinkedList = " + myLinkedList);
         myLinkedList.remove(3);
         System.out.println("myLinkedList = " + myLinkedList);
-
+        myLinkedList.removeObj(10);
+        System.out.println("myLinkedList = " + myLinkedList);
     }
 }
