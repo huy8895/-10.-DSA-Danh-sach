@@ -3,9 +3,15 @@ package LinkedListtheothuvien;
 import com.sun.xml.internal.ws.util.xml.CDATA;
 import org.w3c.dom.CDATASection;
 
+import java.util.LinkedList;
+
 public class MyLinkedList<E> {
     private int numNode;
     private Node head;
+
+    public MyLinkedList() {
+
+    }
 
 
     private class Node {
@@ -33,7 +39,7 @@ public class MyLinkedList<E> {
         StringBuilder result = new StringBuilder("[" + head.data);
 
         int i = 0;
-        while (temp.next != null){
+        while (temp.next != null) {
             result.append(", ");
             temp = temp.next;
             result.append(temp.data);
@@ -48,7 +54,7 @@ public class MyLinkedList<E> {
         Node holder;
         if (index == 0) {
             addFirst(data);
-        } else if (index == numNode){
+        } else if (index == numNode) {
             addLast(data);
         } else {
             for (int i = 0; i < index - 1 && temp.next != null; i++) {
@@ -77,20 +83,19 @@ public class MyLinkedList<E> {
         temp.next = new Node(data);
         numNode++;
 
-
     }
 
-   public void remove(int index) {
+    public void remove(int index) {
         Node removeElement = head;
         Node holder;
-        if (index == 0){
+        if (index == 0) {
             removeFirst();
-        } else if (index == numNode){
+        } else if (index == numNode) {
             removeLast();
         } else {
             removeElement = head;
             int i = 0;
-            while (i < index - 1){
+            while (i < index - 1) {
                 removeElement = removeElement.next;
                 i++;
             }
@@ -100,17 +105,17 @@ public class MyLinkedList<E> {
 
     }
 
-    public void removeFirst(){
+    public void removeFirst() {
         head = head.next;
         numNode--;
     }
 
-    public void removeLast(){
+    public void removeLast() {
         Node temp = head;
         int i = 0;
-        while (i < numNode - 1){
+        while (i < numNode - 1) {
             temp = temp.next;
-            i ++;
+            i++;
         }
         temp.next = null;
         numNode--;
@@ -120,26 +125,40 @@ public class MyLinkedList<E> {
     public boolean removeObj(Object object) {
         Node temp = head;
         boolean isExit = false;
-        for (int i = 0; i < numNode;i++){
-            if (object.equals(temp.data)){
+        for (int i = 0; i < numNode; i++) {
+            if (object.equals(temp.data)) {
                 remove(i);
                 return true;
             }
             temp = temp.next;
-
         }
         return isExit;
 
     }
-    /*
+
     public int size() {
-        return 0;
+        Node temp = head;
+        int i = 1;
+        while (temp.next != null) {
+            temp = temp.next;
+            i++;
+        }
+        return i;
     }
 
     public E clone() {
-        return E;
-    }
+        MyLinkedList<E> clone = new MyLinkedList();
 
+        clone.head = null;
+        clone.numNode = 0;
+
+        // Initialize clone with our elements
+        for (Node x = head; x != null; x = x.next)
+            clone.addLast(x.data);
+
+        return (E) clone;
+    }
+/*
     public boolean contains(E element) {
         return false;
     }

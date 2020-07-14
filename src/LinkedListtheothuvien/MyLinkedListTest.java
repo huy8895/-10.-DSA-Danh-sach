@@ -1,5 +1,7 @@
 package LinkedListtheothuvien;
 
+import java.util.LinkedList;
+
 public class MyLinkedListTest {
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList(1);
@@ -14,9 +16,10 @@ public class MyLinkedListTest {
         System.out.println("myLinkedList = " + myLinkedList);
         myLinkedList.removeLast();
         System.out.println("myLinkedList = " + myLinkedList);
-        myLinkedList.remove(3);
-        System.out.println("myLinkedList = " + myLinkedList);
         myLinkedList.removeObj(10);
         System.out.println("myLinkedList = " + myLinkedList);
+        System.out.println("myLinkedList.size() = " + myLinkedList.size());
+
+
     }
 }
