@@ -8,7 +8,6 @@ public class MyLinkedList<E> {
 
     }
 
-
     private class Node {
         Node next;
         Object data;
@@ -77,11 +76,10 @@ public class MyLinkedList<E> {
             temp = temp.next;
         temp.next = new Node(data);
         numNode++;
-
     }
 
     public void remove(int index) {
-        Node removeElement = head;
+        Node removeElement;
         Node holder;
         if (index == 0) {
             removeFirst();
@@ -145,27 +143,44 @@ public class MyLinkedList<E> {
         MyLinkedList<Node> clone = new MyLinkedList<Node>(head.data);
         Node temp = head;
 
-        int i = 0;
         while (temp.next != null){
             temp = temp.next;
             clone.addLast(temp.data);
-            i++;
         }
         return clone;
     }
-/*
+
     public boolean contains(E element) {
+        Node temp = head;
+
+
+        while (temp.next!= null){
+            if (element.equals(temp.data))
+                return true;
+            temp = temp.next;
+        }
         return false;
     }
 
     public int indexOf(E element) {
-        return 0;
+        int index = 0;
+        Node temp = head;
+        while (temp.next != null){
+            if (temp.data == element){
+                return index;
+            }
+            temp = temp.next;
+            index++;
+        }
+        return index;
     }
 
     public boolean add(E element) {
+        Node temp = head;
+
         return false;
     }
-
+/*
     public void ensureCapacity(int minCapacity) {
 
     }

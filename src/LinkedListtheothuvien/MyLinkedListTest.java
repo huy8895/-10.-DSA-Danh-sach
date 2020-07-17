@@ -26,6 +26,8 @@ public class MyLinkedListTest {
         MyLinkedList clone = myLinkedList.clone();
         System.out.println("clone = " + clone);
 
+        System.out.println(myLinkedList.contains(1));
+
 
 
 
