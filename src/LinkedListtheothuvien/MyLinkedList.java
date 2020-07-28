@@ -180,11 +180,12 @@ public class MyLinkedList<E> {
 
         return false;
     }
-/*
+
     public void ensureCapacity(int minCapacity) {
+        Node temp = head;
 
     }
-
+/*
     public E get(int index) {
 
     }

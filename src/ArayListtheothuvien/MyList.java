@@ -1,6 +1,8 @@
 package ArayListtheothuvien;
 
-public class MyList<E> {
+import ArrayListvalinkedlist.MyAbstractList;
+
+public class MyList<E> extends MyAbstractList<E> {
     public static int size;
     public static final int INITIAL_CAPACITY = 16;
     private E[] data = (E[]) new Object[INITIAL_CAPACITY];
@@ -101,6 +103,11 @@ public class MyList<E> {
         E old = data[index];
         data[index] = e;
         return old;
+    }
+
+    @Override
+    public int size() {
+        return 0;
     }
 
     public String toString() {
